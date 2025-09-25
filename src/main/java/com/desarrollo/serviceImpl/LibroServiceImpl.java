@@ -38,6 +38,12 @@ public class LibroServiceImpl implements LibroService {
                     existing.setTitulo(libro.getTitulo());
                     existing.setAutor(libro.getAutor());
                     existing.setEstado(libro.getEstado());
+                    
+                    existing.setCategoria(libro.getCategoria());
+                    existing.setCodigo(libro.getCodigo());
+                    existing.setStock(libro.getStock());
+                    existing.setDescripcion(libro.getDescripcion());
+
                     return libroRepository.save(existing);
                 })
                 .orElseThrow(() -> new RuntimeException("Libro no encontrado"));

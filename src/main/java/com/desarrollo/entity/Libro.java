@@ -23,6 +23,13 @@ public class Libro {
 
     @Enumerated(EnumType.STRING)
     private LibroEstado estado;
+    
+    private String categoria;
+    private String codigo;
+    private Integer stock;
+    @Column(length = 1000)
+    private String descripcion;
+    
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
