@@ -15,9 +15,16 @@ import java.util.Optional;
 public class PedidoServiceImpl implements PedidoService {
 
     private final PedidoRepository pedidoRepository;
+    private final com.desarrollo.repository.LibroRepository libroRepository;
 
     @Override
     public Pedido save(Pedido pedido) {
+        // Si el pedido tiene un libro con id, buscar el libro persistido
+        if (pedido.getLibro() != null && pedido.getLibro().getIdLibro() != null) {
+            com.desarrollo.entity.Libro libro = libroRepository.findById(pedido.getLibro().getIdLibro())
+                .orElseThrow(() -> new RuntimeException("Libro no encontrado"));
+            pedido.setLibro(libro);
+        }
         return pedidoRepository.save(pedido);
     }
 
