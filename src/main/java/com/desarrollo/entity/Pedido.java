@@ -30,6 +30,10 @@ public class Pedido {
 
     private LocalDate fecha;
     private String descripcion;
+    private String direccion;
+    private String nombre;
+    private String telefono;
+    
 
     @Enumerated(EnumType.STRING)
     private PedidoEstado estado;

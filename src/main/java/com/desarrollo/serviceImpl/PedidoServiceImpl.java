@@ -46,6 +46,9 @@ public class PedidoServiceImpl implements PedidoService {
                     existing.setDescripcion(pedido.getDescripcion());
                     existing.setEstado(pedido.getEstado());
                     existing.setUsuario(pedido.getUsuario());
+                    existing.setDireccion(pedido.getDireccion());
+                    existing.setNombre(pedido.getNombre());
+                    existing.setTelefono(pedido.getTelefono());
                     existing.setLibro(pedido.getLibro());
                     return pedidoRepository.save(existing);
                 })

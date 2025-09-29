@@ -26,7 +26,7 @@ public class Libro {
     
     private String categoria;
     private String codigo;
-    private Integer stock;
+    private Integer precio;
     @Column(length = 1000)
     private String descripcion;
     
